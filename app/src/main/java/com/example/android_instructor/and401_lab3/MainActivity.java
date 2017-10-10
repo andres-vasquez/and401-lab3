@@ -1,5 +1,6 @@
 package com.example.android_instructor.and401_lab3;
 
+import android.support.annotation.IdRes;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -66,6 +67,23 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
         switch1.setOnCheckedChangeListener(this);
         checkBox.setOnCheckedChangeListener(this);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                switch (checkedId){
+                    case R.id.radioButton1:
+                        Log.i("radioGroup","1");
+                        break;
+                    case R.id.radioButton2:
+                        Log.i("radioGroup","2");
+                        break;
+                    case R.id.radioButton3:
+                        Log.i("radioGroup","3");
+                        break;
+                }
+            }
+        });
     }
 
     @Override
