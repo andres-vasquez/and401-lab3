@@ -13,7 +13,7 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.ToggleButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener{
 
     private static final String LOG = MainActivity.class.getSimpleName();
 
@@ -46,5 +46,37 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("toggleButton",""+isChecked);
             }
         });
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Log.i("seekBar",""+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                Log.i("seekBar","Start");
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Log.i("seekBar","Stop");
+            }
+        });
+
+        switch1.setOnCheckedChangeListener(this);
+        checkBox.setOnCheckedChangeListener(this);
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch (buttonView.getId()){
+            case R.id.switch1:
+                Log.i("switch1",""+isChecked);
+                break;
+            case R.id.checkBox:
+                Log.i("checkBox",""+isChecked);
+                break;
+        }
     }
 }
