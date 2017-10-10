@@ -1,11 +1,13 @@
 package com.example.android_instructor.and401_lab3;
 
+import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -85,6 +87,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 }
             }
         });
+    }
+
+    public void imageButtonClick(View v){
+        Intent intent = new Intent(this,SelectorActivity.class);
+        startActivity(intent);
     }
 
     @Override

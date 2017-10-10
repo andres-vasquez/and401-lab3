@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AND401-lab3</string>
+
+    <string-array name="productos">
+        <item>Pan</item>
+        <item>Chocolate</item>
+        <item>Coca Cola</item>
+        <item>Leche</item>
+    </string-array>
 </resources>
