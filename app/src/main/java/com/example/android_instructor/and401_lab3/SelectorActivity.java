@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SelectorActivity extends AppCompatActivity {
 
@@ -19,6 +23,16 @@ public class SelectorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selector);
 
         spinner = (Spinner)findViewById(R.id.spinner);
+
+        List<String> lstOpciones = new ArrayList<>();
+        lstOpciones.add("Leche");
+        lstOpciones.add("Chocolate");
+        lstOpciones.add("Pan");
+        lstOpciones.add("Coca Cola");
+
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,lstOpciones);
+        spinner.setAdapter(adapter);
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
