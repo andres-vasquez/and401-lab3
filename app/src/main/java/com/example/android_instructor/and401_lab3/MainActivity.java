@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         textInputLayout=(TextInputLayout)findViewById(R.id.textInputLayout);
         editText=(EditText)findViewById(R.id.editText);
 
+
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
