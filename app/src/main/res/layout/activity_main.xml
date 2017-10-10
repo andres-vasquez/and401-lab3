@@ -17,7 +17,9 @@
         android:layout_marginLeft="21dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="20dp"
-        android:text="ToggleButton" />
+        android:drawableLeft="@drawable/ic_home_black_24dp"
+        android:textOn="Encendido"
+        android:textOff="Apagado"/>
 
     <CheckBox
         android:id="@+id/checkBox"
